@@ -1,0 +1,33 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form>
+      <div class="form-group">
+        <label for="name">Buscar</label>
+        <input type="text" class="form-control" name="sharedKey" placeholder="Ingresar sharedKey" #term>
+      </div>
+      <div class="form-group">
+      <a class="btn btn-warning btn-lg" (click)="buscar(term)">Buscar</a>
+      </div>
+      </form>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">SharedKey</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Fecha de registro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.sharedKey }}</td>
+          <td>{{ user.name }}</td>
+          <td><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
+          <td>{{formatdate(user.dateAdded)}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

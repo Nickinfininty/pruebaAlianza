@@ -1,0 +1,32 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        <label for="name">sharedKey</label>
+        <input type="text" [(ngModel)]="user.sharedKey" class="form-control" id="name" name="name"
+          placeholder="Ingresar sharedKey" required #name="ngModel">
+          <div [hidden]="!name.pristine" class="alert alert-danger">sharedKey es requerido</div>
+      </div>
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" [(ngModel)]="user.name" class="form-control" id="name" name="name"
+          placeholder="Ingresar nombre" required #name="ngModel">
+          <div [hidden]="!name.pristine" class="alert alert-danger">Nombre es requerido</div>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="text" [(ngModel)]="user.email" class="form-control" id="email" name="email"
+          placeholder="Ingresar dirección de email" required #email="ngModel">
+        <div [hidden]="!email.pristine" class="alert alert-danger">Email es requerido</div>
+      </div>
+      <div class="form-group">
+        <label for="dateAdded">Fecha de registro</label>
+        <input type="date" [(ngModel)]="user.dateAdded" class="form-control" id="dateAdded" name="dateAdded"
+          placeholder="Ingresar fecha de registro" required #dateAdded="ngModel">
+        <div [hidden]="!dateAdded.pristine" class="alert alert-danger">Fecha de registro es requerido</div>
+      </div>
+
+      <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
