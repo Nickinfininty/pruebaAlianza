@@ -1,5 +1,6 @@
 <div class="card my-5">
   <div class="card-body">
+    <h2>Ingresar usuario</h2>
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
       <div class="form-group">
         <label for="name">sharedKey</label>
@@ -26,7 +27,7 @@
         <div [hidden]="!dateAdded.pristine" class="alert alert-danger">Fecha de registro es requerido</div>
       </div>
 
-      <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
+      <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-success float-right btn-lg">Enviar</button>
     </form>
   </div>
 </div>
